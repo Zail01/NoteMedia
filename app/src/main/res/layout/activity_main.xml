@@ -64,7 +64,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
-        android:layout_below="@+id/checkBox">
+        android:layout_below="@+id/checkBox"
+        android:id="@+id/radioGroup">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -81,5 +82,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/radio3" />
     </RadioGroup>
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/resText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
