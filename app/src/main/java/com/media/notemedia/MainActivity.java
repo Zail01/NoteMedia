@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         radio1.setText("Hollande");
         radio2.setText("Sherlock");
         radio3.setText("Chuck Norris");
+        //End Initialize elements
 
         question = (EditText)findViewById(R.id.editText);
 
