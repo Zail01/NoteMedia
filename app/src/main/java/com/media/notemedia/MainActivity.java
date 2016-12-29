@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -69,16 +70,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v){
         if(question.getText().toString().isEmpty()){
-            response.setText("Vous ne pouvez pas ne rien dire voyons !");
+            Toast toast = Toast.makeText(MainActivity.this, "Vous ne pouvez pas ne rien dire voyons !", Toast.LENGTH_LONG);
+            toast.show();
+            response.setText("");
         } else {
             RadioButton choice = (RadioButton) findViewById(choices.getCheckedRadioButtonId());
             if(choices.getCheckedRadioButtonId() == -1){
-                response.setText("Comment voulez-vous faire parler personne ?");
+                Toast toast = Toast.makeText(MainActivity.this, "Comment voulez-vous faire parler personne ?", Toast.LENGTH_LONG);
+                toast.show();
+                response.setText("");
             } else {
-                if (boxTrue.isChecked()) {
-                    response.setText(choice.getText().toString() + ", avait raison, " + question.getText().toString());
+                if(boxTrue.isChecked() && boxFalse.isChecked()){
+                    Toast toast = Toast.makeText(MainActivity.this, "Dire quelques chose de Vrai et de Faux n'est pas possible voyons !", Toast.LENGTH_LONG);
+                    toast.show();
+                    response.setText("");
                 } else {
-                    response.setText(choice.getText().toString() + ", avait tort," + question.getText().toString());
+                    if (boxTrue.isChecked()) {
+                        response.setText("Quand " + choice.getText().toString() + " disait '" + question.getText().toString() + "'. Il avait raison !");
+                    } else {
+                        response.setText("Quand " + choice.getText().toString() + " disait '" + question.getText().toString() + "'. Il avait tort !");
+                    }
                 }
             }
         }
