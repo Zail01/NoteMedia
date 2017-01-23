@@ -2,5 +2,5 @@
     <string name="app_name">NoteMedia</string>
     <string name="textTest">Texte de test</string>
     <string name="buttonTest">Bouton de test</string>
-    <string name="edit1">Texte à éditer</string>
+    <string name="edit1">Que voulez-vous dire ?</string>
 </resources>
